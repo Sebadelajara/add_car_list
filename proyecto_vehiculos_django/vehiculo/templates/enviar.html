@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %} Formulario enviar {% endblock %}
+
+    {% block content %}
+
+    <div id='form' class=' d-flex justify-content-center pt-4 mt-4'>
+
+        <form action="" method="post" class='w-50'>
+        {% csrf_token %}
+        <label for="marca">marca:</label>
+        <select id="marca" name="marca" class='form-select mb-3'>
+            <option value="ford">Ford</option>
+            <option value="chevrolet">Chevrolet</option>
+            <option value="fiat">Fiat</option>
+            <option value="toyota">Toyota</option>
+        </select>
+
+     
+        <label for="modelo">modelo:</label>
+        <input type="text" name="modelo" class='form-control mb-3'>
+
+        <label for="">serial_carroceria:</label>
+        <input type="text" name="serial_carroceria" class='form-control mb-3'>
+
+        <label for="">serial_motor:</label>
+        <input type="text" name="serial_motor" class='form-control mb-3'>
+
+        <label for="">Categoria:</label>
+        <select id="categoria" name="categoria" class="form-select mb-3">
+            <option value="particular">Particular</option>
+            <option value="carga">Carga</option>
+            <option value="transporte">Transporte</option>
+        </select>
+
+        <label for="">precio:</label>
+        <input type="number" name="precio" class='form-control mb-3'>
+
+
+
+        <button type="submit" class="btn btn-primary">enviar</button>
+
+        </form>
+    </div>
+        
+    {% endblock %}
+
+ 
+
+

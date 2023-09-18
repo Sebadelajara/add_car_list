@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %} Lista {% endblock %} 
+
+{% block content %}
+
+   
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Serial Carroceria</th>
+                <th scope="col">Serial Motor</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Condicion Precio</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+    {% for i in vehiculos %}
+        <tr>
+            <td scope="row">{{ i.marca }}</td>
+
+            <td>{{ i.modelo }}</td>
+            <td>{{ i.serial_carroceria }}</td>
+            <td>{{ i.serial_motor }}</td>
+            <td>{{ i.categoria }}</td>
+            <td>{{ i.precio }}</td>
+            
+            {% if i.precio <= 10000 %}
+                <td>{{ 'bajo' }}</td>
+            {% elif i.precio <= 30000 %}
+                <td>{{ 'medio' }}</td>
+            {% else %}
+                <td>{{ 'alto' }}</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
